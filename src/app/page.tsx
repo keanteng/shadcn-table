@@ -1,101 +1,83 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="h-screen w-screen flex flex-row">
+        <div className="w-1/2 hidden lg:block h-full relative">
+          <Image
+            src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="A beautiful landscape"
+            width={1650}
+            height={1080}
+            className="object-cover object-bottom w-full h-full"
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="flex lg:w-1/2 w-full h-full justify-center xl:py-60 xl:px-40 lg:py-20 lg:px-20 px-3 py-32">
+          <div className="flex flex-col w-full border rounded-lg shadow-lg p-6 border-neutral-300">
+            <div className="flex flex-col gap-0.5">
+              <h1 className="font-bold text-2xl">Sign In</h1>
+              <p className="text-gray-500 font-md">Choose your preferred way to sign in</p>
+            </div>
+            <div className="flex flex-row gap-6 my-4">
+              <Link
+                href="#"
+                className="p-2 border border-neutral-300 shadow-md rounded-md w-full text-center"
+              >
+                Google
+              </Link>
+              <Link
+                href="#"
+                className="p-2 border border-neutral-300 shadow-md rounded-md w-full text-center"
+              >
+                GitHub
+              </Link>
+            </div>
+            <div className="flex items-center gap-1 my-2">
+              <p className="flex-grow border-b border-neutral-300"></p>
+              <p className="px-2 text-sm text-gray-500">OR CONTINUE WITH</p>
+              <p className="flex-grow border-b border-neutral-300"></p>
+            </div>
+            <form className="flex flex-col gap-5">
+              <div className="flex flex-col gap-2">
+                <label htmlFor="email" className="text-sm font-medium">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="hello999@ecommerce.com"
+                  className="w-full border border-neutral-300 rounded-md p-2 "
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="password" className="text-sm font-medium">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="********"
+                  className="w-full border border-neutral-300 rounded-md py-2 px-3 placeholder:items-"
+                />
+              </div>
+              <button className="bg-black p-2 text-white rounded-md hover:bg-zinc-900">
+                Sign In
+              </button>
+            </form>
+            <div className="flex-grow"></div>
+            <div className="flex flex-row justify-between items-center">
+              <p className="text-xs text-gray-500 md:text-sm">
+                Don't have an account?{"  "}
+                <Link href="/dashboard" className="text-black underline">
+                  Sign Up
+                </Link>
+              </p>
+              <Link href="#" className="text-black hover:underline text-xs md:text-sm">
+                Reset Password
+              </Link>
+            </div>
+          </div>
+      </div>
+        
+    </main>
   );
 }
